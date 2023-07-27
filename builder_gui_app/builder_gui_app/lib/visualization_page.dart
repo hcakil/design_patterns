@@ -1,21 +1,18 @@
 // lib/visualization_page.dart
 
 import 'package:flutter/material.dart';
-import 'models/crust.dart';
-import 'models/sauce.dart';
-import 'models/topping.dart';
 import 'models/pizza.dart';
 
 class CustomPizzaVisualizationPage extends StatelessWidget {
   final Pizza pizza;
 
-  CustomPizzaVisualizationPage({required this.pizza});
+  const CustomPizzaVisualizationPage({super.key, required this.pizza});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Custom Pizza Visualization'),
+        title: const Text('Custom Pizza Visualization'),
       ),
       body: ListView(
         children: [
@@ -28,11 +25,11 @@ class CustomPizzaVisualizationPage extends StatelessWidget {
           ListTile(title: Text('Crust: ${pizza.crust.name}')),
           ListTile(title: Text('Sauce: ${pizza.sauce.name}')),
           ListTile(
-            title: Text('Toppings'),
+            title: const Text('Toppings'),
             subtitle: pizza.toppings.isNotEmpty
                 ? ListView.builder(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: pizza.toppings.length,
                     itemBuilder: (context, index) {
                       return ListTile(
@@ -41,7 +38,7 @@ class CustomPizzaVisualizationPage extends StatelessWidget {
                       );
                     },
                   )
-                : Text('None'),
+                : const Text('None'),
           ),
         ],
       ),

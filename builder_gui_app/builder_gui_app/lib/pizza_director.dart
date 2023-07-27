@@ -8,8 +8,6 @@ import 'models/pizza.dart';
 
 class PizzaDirector {
   Pizza buildCustomPizza(PizzaBuilder builder) {
-    // You can customize this method to guide the pizza building process.
-    // For this example, we'll build a default pizza with specific crust, sauce, and toppings.
 
     // Default Crust
     builder.addCrust(Crust(id: 1, name: 'Thin Crust', diameter: 12.0, isThick: false));

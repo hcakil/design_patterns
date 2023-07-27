@@ -1,34 +1,40 @@
 // lib/main.dart
 
 import 'package:flutter/material.dart';
+
 import 'models/pizza.dart';
 import 'pizza_builder.dart';
 import 'pizza_director.dart';
 import 'visualization_page.dart';
 
 void main() {
-  runApp(PizzaApp());
+  runApp(const PizzaApp());
 }
 
 class PizzaApp extends StatelessWidget {
+  const PizzaApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Custom Pizza Builder',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: PizzaOrderPage(),
+      home: const PizzaOrderPage(),
     );
   }
 }
 
 class PizzaOrderPage extends StatefulWidget {
+  const PizzaOrderPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _PizzaOrderPageState createState() => _PizzaOrderPageState();
 }
 
 class _PizzaOrderPageState extends State<PizzaOrderPage> {
-  PizzaBuilder _builder = PizzaBuilder();
-  PizzaDirector _director = PizzaDirector();
+  final PizzaBuilder _builder = PizzaBuilder();
+  final PizzaDirector _director = PizzaDirector();
   Pizza? _customPizza;
 
   void _buildCustomPizza() {
@@ -37,7 +43,7 @@ class _PizzaOrderPageState extends State<PizzaOrderPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Your Custom Pizza'),
+          title: const Text('Your Custom Pizza'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +55,7 @@ class _PizzaOrderPageState extends State<PizzaOrderPage> {
           ),
           actions: <Widget>[
             TextButton(
-              child: Text('Close'),
+              child: const Text('Close'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -65,11 +71,11 @@ class _PizzaOrderPageState extends State<PizzaOrderPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Pizza Not Built'),
-          content: Text('Please build your custom pizza first.'),
+          title: const Text('Pizza Not Built'),
+          content: const Text('Please build your custom pizza first.'),
           actions: <Widget>[
             TextButton(
-              child: Text('OK'),
+              child: const Text('OK'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -84,7 +90,7 @@ class _PizzaOrderPageState extends State<PizzaOrderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Custom Pizza Builder'),
+        title: const Text('Custom Pizza Builder'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -103,7 +109,7 @@ class _PizzaOrderPageState extends State<PizzaOrderPage> {
             _showAlert();
           }
         },
-        child: Icon(Icons.visibility_outlined),
+        child: const Icon(Icons.visibility_outlined),
       ),
     );
   }
