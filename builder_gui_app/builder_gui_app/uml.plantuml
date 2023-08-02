@@ -1,0 +1,63 @@
+@startuml Builder_Design_Pattern_GUI_APP
+scale 2
+class Crust {
+  int id;
+  String name;
+  double diameter;
+  bool isThick;
+
+  Crust({required this.id, required this.name, required this.diameter, required this.isThick});
+}
+class Pizza {
+  Crust crust;
+  Sauce sauce;
+  List<Topping> toppings;
+
+  Pizza({required this.crust, required this.sauce, required this.toppings});
+}
+class Sauce {
+  int id;
+  String name;
+  String type;
+
+  Sauce({required this.id, required this.name, required this.type});
+}
+class Topping {
+  int id;
+  String name;
+  bool isVegetarian;
+
+  Topping({required this.id, required this.name, required this.isVegetarian});
+}
+
+class PizzaBuilder {
+  Crust? _crust;
+  Sauce? _sauce;
+  List<Topping> _toppings = [];
+
+  void addCrust(Crust crust)
+
+  addSauce(Sauce sauce)
+
+  addTopping(Topping topping)
+
+  build()
+}
+class PizzaDirector {
+  Pizza buildCustomPizza(PizzaBuilder builder)
+}
+abstract class AbstractBuilder {
+  void addCrust(Crust crust);
+  void addSauce(Sauce sauce);
+  void addTopping(Topping topping);
+  Pizza build();
+}
+AbstractBuilder <|-- PizzaBuilder
+PizzaBuilder "1" o-- "1" Crust
+PizzaBuilder "1" o-- "1" Sauce
+PizzaBuilder "1" o-- "*" Topping
+Pizza "1" o-- "1" Crust
+Pizza "1" o-- "1" Sauce
+Pizza "1" o-- "*" Topping
+
+@enduml
