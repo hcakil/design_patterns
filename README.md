@@ -8,8 +8,10 @@
 3. Liskov Substitution Principle (LSP): The Factory Method pattern is compatible with the LSP, as the client code interacts with products through their common abstract interface. This allows the client code to work seamlessly with any Concrete Product created by the corresponding Concrete Creator.
 4. Interface Segregation Principle (ISP): The Factory Method pattern doesn't directly address the ISP as it is more focused on creational concerns. However, it's worth noting that the Factory Method pattern inherently segregates the responsibility of object creation into separate classes, which indirectly aligns with the ISP's idea of having specific interfaces for specific tasks.
 5. Dependency Inversion Principle (DIP): The Factory Method pattern adheres to the DIP by ensuring that the client code depends on the abstract Creator interface (high-level module) rather than concrete product classes (low-level modules). This abstraction allows for flexibility and extensibility in creating new products without affecting the client code.
-6.
-7.
-8.
-9. ![uml](https://github.com/hcakil/design_patterns/assets/48150826/37908cbc-d734-4d20-8f76-9dee492763c2)
+
+
+
+
+
+ ![uml](https://github.com/hcakil/design_patterns/assets/48150826/37908cbc-d734-4d20-8f76-9dee492763c2)
 
