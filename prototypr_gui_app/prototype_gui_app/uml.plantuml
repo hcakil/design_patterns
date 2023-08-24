@@ -1,0 +1,32 @@
+@startuml
+!pragma layout smetana
+class Wizard {
+  final int intelligence;
+
+  Wizard({required int x, required int y, required Color color, required this.intelligence});
+  Wizard clone();
+}
+class Warrior {
+  final int strength;
+
+  Warrior({required int x, required int y, required Color color, required this.strength});
+
+        @override
+          Warrior clone();
+}
+abstract class Character {
+  final int x;
+  final int y;
+  final Color color;
+
+  Character({required this.x, required this.y, required this.color});
+
+  Character clone();
+}
+
+
+Character <|-- Warrior
+Character <|-- Wizard
+
+
+@enduml

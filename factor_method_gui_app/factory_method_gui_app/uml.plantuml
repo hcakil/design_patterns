@@ -1,0 +1,54 @@
+@startuml
+!pragma layout smetana
+class Bread {
+  final String type;
+
+  Bread(this.type);
+}
+class Filling {
+  final String name;
+
+  Filling(this.name);
+}
+
+class Sandwich {
+  final Bread bread;
+  final Filling filling;
+  final Sauce sauce;
+
+  Sandwich({required this.bread, required this.filling, required this.sauce});
+}
+class Sauce {
+  final String type;
+
+  Sauce(this.type);
+}
+
+abstract class SandwichFactory {
+  Bread createBread();
+  Filling createFilling();
+  Sauce createSauce();
+}
+
+class ItalianSandwichFactory  {
+  Bread createBread()
+  Filling createFilling()
+   Sauce createSauce()
+}
+
+class VeggieSandwichFactory  {
+  Bread createBread()
+  Filling createFilling()
+   Sauce createSauce()
+}
+
+SandwichFactory <|-- ItalianSandwichFactory
+SandwichFactory <|-- VeggieSandwichFactory
+
+
+Sandwich "1" o-- "1" Bread
+Sandwich "1" o-- "1" Filling
+Sandwich "1" o-- "1" Sauce
+
+
+@enduml
