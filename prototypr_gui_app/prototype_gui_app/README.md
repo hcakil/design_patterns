@@ -4,6 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
+#Solid Principle
 
 Let's analyze the relevance of the SOLID principles for the Prototype design pattern:
 1. Single Responsibility Principle (SRP): The Prototype pattern doesn't inherently violate the SRP. Each class, including the original object and its clones, can have a single responsibility. However, in scenarios where the prototype creation logic becomes too complex, it might be better to separate the cloning logic from the original class to keep it focused on its main purpose.
@@ -24,4 +25,5 @@ Eksileri:
 • Bazı dillerde, nesne kopyalarının yönetimi ve sürdürülebilirliği karmaşık olabilir.
 • İçerdiği veriler veya bağlantılar, kopyalanan nesnelerde beklenmeyen sonuçlara yol açabilir.
 Örnek: Bir örnekle açıklayalım. Varsayalım ki bir oyun geliştiriyorsunuz ve oyun karakterlerinin çeşitli tipleri var. Her karakter tipinin farklı özellikleri ve yetenekleri olabilir. Prototype deseni bu durumda işe yarayabilir.
+
 
