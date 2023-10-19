@@ -1,0 +1,38 @@
+@startuml
+!pragma layout smetana
+
+class Note {
+  final String id; 
+  final String title;
+  final String content;
+
+  Note({String? id, required this.title, required this.content})
+      : id = id ?? const Uuid().v4(); 
+}
+class NoteRepository {
+  static final NoteRepository _instance = NoteRepository._internal();
+  final List<Note> _notes = [];
+  final _lock = Lock();
+
+  NoteRepository._internal();
+
+  factory NoteRepository(); 
+
+
+  List<Note> getNotes()
+
+  void addNote(Note note) 
+}
+
+class EditScreen {
+  final Note note;
+  }
+
+  class HomeScreen {}
+
+NoteRepository <|-- Note
+NoteRepository <|-- EditScreen
+NoteRepository <|-- HomeScreen
+
+
+@enduml
