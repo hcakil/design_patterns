@@ -26,7 +26,7 @@ class _TemperatureConverterScreenState extends State<TemperatureConverterScreen>
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.all(16),
+              margin: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(width: 2, color: Colors.blue),
@@ -34,12 +34,12 @@ class _TemperatureConverterScreenState extends State<TemperatureConverterScreen>
               child: TextField(
                 controller: _celsiusController,
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'Celsius', border: InputBorder.none),
+                decoration: const InputDecoration(labelText: 'Celsius', border: InputBorder.none),
                 onChanged: _convertCelsiusToFahrenheit,
               ),
             ),
             Container(
-              margin: EdgeInsets.all(16),
+              margin: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(width: 2, color: Colors.blue),
@@ -47,7 +47,7 @@ class _TemperatureConverterScreenState extends State<TemperatureConverterScreen>
               child: TextField(
                 controller: _fahrenheitController,
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'Fahrenheit', border: InputBorder.none),
+                decoration: const InputDecoration(labelText: 'Fahrenheit', border: InputBorder.none),
                 onChanged: _convertFahrenheitToCelsius,
               ),
             ),
