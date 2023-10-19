@@ -5,9 +5,10 @@ import '../utils/note_repository.dart';
 class EditScreen extends StatefulWidget {
   final Note note;
 
-  EditScreen({required this.note});
+  const EditScreen({super.key, required this.note});
 
   @override
+  // ignore: library_private_types_in_public_api
   _EditScreenState createState() => _EditScreenState();
 }
 
@@ -27,7 +28,7 @@ class _EditScreenState extends State<EditScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Note'),
+        title: const Text('Edit Note'),
         actions: [
           IconButton(
             icon: const Icon(Icons.check),
