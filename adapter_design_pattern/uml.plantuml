@@ -15,10 +15,6 @@ class Temperature {
 }
 
 
-class EditScreen {
-  final Note note;
-  }
-
   class TemperatureConverterScreen {}
 
 TemperatureAdapter <|-- Temperature
